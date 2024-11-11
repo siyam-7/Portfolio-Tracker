@@ -1,11 +1,11 @@
 import React from 'react';
-import PortfolioList from './PortfolioList';  
+import StockDataComponent from './StockDataComponent'; // Assuming you place the stock data component in a separate file
 
-const App = () => {
+function App() {
   return (
     <div>
-      <h1>My Portfolio Tracker</h1>
-      <PortfolioList />
+      <h1>Welcome to the Stock Data App</h1>
+      <StockDataComponent />
     </div>
   );
 }
