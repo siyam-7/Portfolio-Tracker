@@ -39,16 +39,25 @@ const Card = styled(MuiCard)(({ theme }) => ({
 }));
 
 const SignInContainer = styled(Stack)(({ theme }) => ({
-  height: '100vh', // Ensures full viewport height
+  height: 'calc((1 - var(--template-frame-height, 0)) * 100dvh)',
   minHeight: '100%',
   padding: theme.spacing(2),
-  position: 'relative', // Ensures the background is positioned relative to this container
-  backgroundImage: 'url("/path/to/your/image.jpg")', // Replace with your image path
-  backgroundSize: 'cover', // Ensures the image covers the screen
-  backgroundPosition: 'center', // Centers the image in the viewport
-  backgroundRepeat: 'no-repeat', // Prevents repeating the background image
   [theme.breakpoints.up('sm')]: {
     padding: theme.spacing(4),
+  },
+  '&::before': {
+    content: '""',
+    display: 'block',
+    position: 'fixed',
+    zIndex: -1,
+    inset: 0,
+    backgroundImage:
+      'radial-gradient(ellipse at 50% 50%, hsl(210, 100%, 97%), hsl(0, 0%, 100%))',
+    backgroundRepeat: 'no-repeat',
+    ...theme.applyStyles('dark', {
+      backgroundImage:
+        'radial-gradient(at 50% 50%, hsla(210, 100%, 16%, 0.5), hsl(220, 30%, 5%))',
+    }),
   },
 }));
 
@@ -194,7 +203,7 @@ export default function SignIn(props) {
               Don&apos;t have an account?{' '}
               <span>
                 <Link
-                  href="/sign-up/SignUp.js"
+                  href="/sign-up/"
                   variant="body2"
                   sx={{ alignSelf: 'center' }}
                 >

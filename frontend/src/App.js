@@ -5,8 +5,6 @@ import { Button } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import SettingsIcon from '@mui/icons-material/Settings';
-import SignIn from './sign-in/SignIn'
-import SingUp from './sign-up/SignUp'
 
 const theme = createTheme({
   palette: {
@@ -47,8 +45,6 @@ function App() {
       </div>
       <div className='logo'></div>
 
-      
-      <SignIn></SignIn>
     </div>
     </ThemeProvider>
   );
